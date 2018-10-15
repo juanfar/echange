@@ -1,3 +1,5 @@
+import { skip } from 'rxjs/operator/skip';
+import { NavController } from 'ionic-angular/umd';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { IntroPage } from './intro';
@@ -10,5 +12,7 @@ import { IntroPage } from './intro';
     IonicPageModule.forChild(IntroPage),
   ],
 })
-export class IntroPageModule {}
+export class IntroPageModule {
+  
+}
 

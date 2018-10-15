@@ -1,0 +1,19 @@
+page-book-details {
+    ion-card {
+        padding-bottom: 10px;
+        img {
+            width: 50%;
+            margin: auto;
+        }
+        .card-content {
+            p {
+                font-size: 12px;
+            }
+        }
+        ion-thumbnail {
+            img {
+                width: 80px;
+            }
+        }
+    }
+}

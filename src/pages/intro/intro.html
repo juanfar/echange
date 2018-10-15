@@ -1,5 +1,5 @@
 <ion-content>
-    <ion-slides pager>
+    <ion-slides pager (ionSlideDidChange)="slideChanged()">
         <ion-slide>
             <div class="diag slid">
                 <ion-icon ios="ios-bookmarks" md="md-bookmarks" color="primary"></ion-icon>
@@ -36,8 +36,8 @@
                 <p>Contáctate con el usuario por medio de nuestro chat para hacer un feliz intercambio</p>
             </div>
         </ion-slide>
-
-        <button [navPush]="HomePage" id="skip">Omitir</button>
     </ion-slides>
+
+    <button (click)="skip()" id="skip">{{skipMsg}}</button>
 
 </ion-content>

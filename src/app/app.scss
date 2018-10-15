@@ -16,4 +16,10 @@
 ion-content {
     background-color: #EFEFEF !important;
     font-family: 'Raleway';
+    h2 {
+        margin: 0 !important;
+    }
+    .global-separator {
+        padding-top: 50px;
+    }
 }
