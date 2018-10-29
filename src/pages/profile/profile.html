@@ -7,11 +7,6 @@
 <ion-header>
 
     <ion-navbar>
-        <!--<ion-buttons left>
-            <button ion-button icon-only (click)="goBack()">
-                <ion-icon name="arrow-back"></ion-icon>
-            </button>
-        </ion-buttons>-->
         <ion-title>Perfil</ion-title>
     </ion-navbar>
 
@@ -20,29 +15,29 @@
 
 <ion-content padding>
     <ion-avatar class="avatar">
-        <img src="../assets/imgs/juanfar.jpg">
+        <img [src]="profile.picture">
     </ion-avatar>
-    <p text-center class="p-username">Juanfar</p>
+    <p text-center class="p-username">{{profile.username}}</p>
     <div class="global-separator"></div>
     <div class="global-separator"></div>
     <ion-list>
         <ion-item>
             <ion-icon name="person" item-start></ion-icon>
-            JUAN MANUEL FAJARDO
+            {{profile.name | titlecase}} {{profile.lastname | titlecase}}
         </ion-item>
         <ion-item>
             <ion-avatar item-start class="country">
                 <img src="../assets/imgs/colombia.png">
             </ion-avatar>
-            Colombia
+            {{profile.country | titlecase}}
         </ion-item>
         <ion-item>
             <ion-icon name="call" item-start></ion-icon>
-            +57 3508945328
+            {{profile.phone}}
         </ion-item>
         <ion-item>
             <ion-icon name="mail" item-start></ion-icon>
-            juanchofajardo@gmail.com
+            {{profile.email}}
         </ion-item>
         <!--<ion-item text-center>
             <button ion-button>Contactar</button>

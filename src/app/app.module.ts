@@ -13,9 +13,19 @@ import { ProfilePage } from '../pages/profile/profile';
 import { BookDetailsPage } from '../pages/book-details/book-details';
 import { ChatPage } from '../pages/chat/chat';
 import { PostsPage } from '../pages/posts/posts';
+import { RegisterPage } from '../pages/register/register';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+// firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { credentials } from './config';
+
+// Service
+import { UserService } from "../services/user.service";
+
 
 @NgModule({
   declarations: [
@@ -27,11 +37,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ProfilePage,
     HomePage,
+    RegisterPage,
     TabsPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(credentials.firebase),
+    AngularFirestoreModule,
     BrowserAnimationsModule
   ],
   bootstrap: [IonicApp],
@@ -44,12 +57,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ProfilePage,
     HomePage,
+    RegisterPage,
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    UserService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
+    
   ]
 })
 export class AppModule {}
