@@ -1,0 +1,38 @@
+<!--
+  Generated template for the AddBookPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Agregar Libro</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <form (ngSubmit)="bookForm()">
+        <ion-item>
+            <ion-label>Título</ion-label>
+            <ion-input type="text" [(ngModel)]="nBook.name" name="name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Descripción</ion-label>
+            <ion-textarea [(ngModel)]="nBook.descripcion" name="descripcion"></ion-textarea>
+        </ion-item>
+        <ion-item>
+            <ion-label>Autor</ion-label>
+            <ion-input type="text" [(ngModel)]="nBook.autor" name="autor"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Año de publicación</ion-label>
+            <ion-input type="text" [(ngModel)]="nBook.date" name="date"></ion-input>
+        </ion-item>
+        <button ion-button type="submit" block>Agregar libro</button>
+    </form>
+
+</ion-content>

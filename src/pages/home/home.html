@@ -8,45 +8,18 @@
     <h2>Bienvenido a tu mejor intercambio de libros!</h2>
     <div class="global-separator"></div>
     <ion-list>
-        <ion-item>
+        <ion-item *ngFor="let b of books">
             <ion-thumbnail item-start>
-                <img src="../assets/imgs/libros/harry.jpg">
+                <img [src]="b.image">
             </ion-thumbnail>
-            <h4>Harry Potter y la piedra filosofal</h4>
-            <p>J. K. Rowling • 1997</p>
-            <button ion-button small (click)="goDetails()">Detalles</button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-start>
-                <img src="../assets/imgs/libros/satanas.jpg">
-            </ion-thumbnail>
-            <h4>Satanás</h4>
-            <p>Mario Mendoza • 2002</p>
-            <button ion-button small>Detalles</button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-start>
-                <img src="../assets/imgs/libros/principito.jpeg">
-            </ion-thumbnail>
-            <h4>El Principito</h4>
-            <p>Antoine de Saint-Exupéry • 1943</p>
-            <button ion-button small>Detalles</button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-start>
-                <img src="../assets/imgs/libros/comedia.jpeg">
-            </ion-thumbnail>
-            <h4>La Divina Comedia</h4>
-            <p>Dante Alighieri • 1321</p>
-            <button ion-button small>Detalles</button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-start>
-                <img src="../assets/imgs/libros/musica.jpg">
-            </ion-thumbnail>
-            <h4>¡Que viva la Música!</h4>
-            <p>Andres Caicedo • 1977</p>
-            <button ion-button small>Detalles</button>
+            <h4>{{b.name}}</h4>
+            <p>{{b.autor}} • {{b.date}}</p>
+            <button ion-button small (click)="goDetails(b.id)">Detalles</button>
         </ion-item>
     </ion-list>
+
+    <ion-fab right bottom>
+        <button ion-fab color="light" (click)="goNewBook()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+
 </ion-content>
