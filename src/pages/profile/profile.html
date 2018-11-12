@@ -15,29 +15,29 @@
 
 <ion-content padding>
     <ion-avatar class="avatar">
-        <img [src]="picture">
+        <img [src]="profile.picture">
     </ion-avatar>
-    <p text-center class="p-username">{{username}}</p>
+    <p text-center class="p-username">{{profile.username}}</p>
     <div class="global-separator"></div>
     <div class="global-separator"></div>
     <ion-list>
         <ion-item>
             <ion-icon name="person" item-start></ion-icon>
-            {{name | titlecase}} {{lastname | titlecase}}
+            {{profile.name | titlecase}} {{profile.lastname | titlecase}}
         </ion-item>
         <ion-item>
             <ion-avatar item-start class="country">
                 <img src="../assets/imgs/colombia.png">
             </ion-avatar>
-            {{country | titlecase}}
+            {{profile.country | titlecase}}
         </ion-item>
         <ion-item>
             <ion-icon name="call" item-start></ion-icon>
-            {{phone}}
+            {{profile.phone}}
         </ion-item>
         <ion-item>
             <ion-icon name="mail" item-start></ion-icon>
-            {{email}}
+            {{profile.email}}
         </ion-item>
         <!--<ion-item text-center>
             <button ion-button>Contactar</button>

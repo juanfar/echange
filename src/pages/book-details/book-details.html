@@ -17,15 +17,15 @@
     <ion-card text-center>
 
         <ion-item>
-            <h3>{{name}}</h3>
-            <p>{{autor}} • {{date}}</p>
+            <h3>Harry Potter y la piedra filosofal</h3>
+            <p>J. K. Rowling • 1997</p>
         </ion-item>
 
-        <img [src]="image">
+        <img src="../assets/imgs/libros/harry.jpg">
 
         <ion-card-content>
             <h3>Descripción:</h3>
-            <p></p>
+            <p>Primer libro de la saga Harry Potter</p>
         </ion-card-content>
 
         <h3>Posteado por:</h3>
@@ -33,11 +33,10 @@
         <ion-list>
             <ion-item>
                 <ion-thumbnail item-start>
-                    <img [src]='picture_prof'>
+                    <img src="../assets/imgs/luisa.jpeg">
                 </ion-thumbnail>
-                <h2>{{name_prof}}</h2>
-                <p>{{phone_prof}}</p>
-                <!--<button ion-button small (click)="goChat()">Contactar</button>-->
+                <h2>Luisa Fernanda Toro</h2>
+                <button ion-button small (click)="goChat()">Intercambiar</button>
             </ion-item>
         </ion-list>
     </ion-card>

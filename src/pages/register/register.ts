@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DeviceInterface } from '../../interfaces/device';
-import { Device } from '@ionic-native/device';
 
-import { User } from "../../interfaces/user";
-import { UserService } from "../../services/user.service";
-
-import { IntroPage } from '../intro/intro';
+/**
+ * Generated class for the RegisterPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({
@@ -15,34 +15,11 @@ import { IntroPage } from '../intro/intro';
 })
 export class RegisterPage {
 
-  deviceInfo: DeviceInterface = {};
-
-  newUser = {};
-
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              private device: Device,
-              private _userService: UserService) {
-              
-    this.deviceInfo.id = this.device.uuid;
-    this.newUser = {
-      isLogged: true,
-      deviceId: this.deviceInfo.id,
-      picture: 'https://firebasestorage.googleapis.com/v0/b/echange-cd725.appspot.com/o/books%2Fuser.png?alt=media&token=8189081c-99c6-4a35-926e-3e88269c3f88',
-      country: 'Colombia'
-    };
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    
+    console.log('ionViewDidLoad RegisterPage');
   }
-
-  userForm() {
-    console.log('newUser', this.newUser);
-    this._userService.addUser(this.newUser);
-    this.newUser = {};
-    this.navCtrl.push(IntroPage);
-  }
-  
 
 }

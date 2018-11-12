@@ -14,12 +14,9 @@ import { BookDetailsPage } from '../pages/book-details/book-details';
 import { ChatPage } from '../pages/chat/chat';
 import { PostsPage } from '../pages/posts/posts';
 import { RegisterPage } from '../pages/register/register';
-import { AddBookPage } from "../pages/add-book/add-book";
-import { LoginPage } from "../pages/login/login";
-import { SplashPage } from "../pages/splash/splash";
-import { RegLogPage } from "../pages/reg-log/reg-log";
 
 import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 // firebase
 import { AngularFireModule } from 'angularfire2';
@@ -28,10 +25,7 @@ import { credentials } from './config';
 
 // Service
 import { UserService } from "../services/user.service";
-import { BookService } from "../services/books.service";
 
-// Device
-import { Device } from '@ionic-native/device';
 
 @NgModule({
   declarations: [
@@ -44,10 +38,6 @@ import { Device } from '@ionic-native/device';
     ProfilePage,
     HomePage,
     RegisterPage,
-    AddBookPage,
-    LoginPage,
-    SplashPage,
-    RegLogPage,
     TabsPage
   ],
   imports: [
@@ -68,17 +58,12 @@ import { Device } from '@ionic-native/device';
     ProfilePage,
     HomePage,
     RegisterPage,
-    AddBookPage,
-    LoginPage,
-    SplashPage,
-    RegLogPage,
     TabsPage
   ],
   providers: [
     StatusBar,
+    SplashScreen,
     UserService,
-    BookService,
-    Device,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
     
   ]
